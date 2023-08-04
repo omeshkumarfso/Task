@@ -25,6 +25,4 @@ describe('Post Component', () => {
     expect(getByText('Test Title')).toBeTruthy();
     expect(getByText('Test Body')).toBeTruthy();
   });
-
-  // Add more tests for various scenarios
 });
