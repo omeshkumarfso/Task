@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const AuthRoute = () => {
+const Home = () => {
   return (
     <View>
-      <Text>AuthRoute</Text>
+      <Text>Home</Text>
     </View>
   )
 }
 
-export default AuthRoute
+export default Home
