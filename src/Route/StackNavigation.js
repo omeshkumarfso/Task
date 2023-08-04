@@ -5,6 +5,7 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import { useSelector } from 'react-redux';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Post from '../Home/Post';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,10 @@ const StackNavigation = () => {
             <Stack.Screen
               name='home'
               component={Home}
+            />
+            <Stack.Screen
+              name='post'
+              component={Post}
             />
           </>
         ) : (

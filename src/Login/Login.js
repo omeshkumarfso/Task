@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput,ScrollView, TouchableOpacity,ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { authActions } from '../store/Auth/AuthSlice'
@@ -8,20 +8,19 @@ const defaultAuth = { defaultEmail: 'omesh@gmail.com', defaultPassword: '12345' 
 const Login = () => {
     const dispatch = useDispatch()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('omesh@gmail.com')
+    const [password, setPassword] = useState('12345')
     const [msg, setMsg] = useState('')
 
 
     const submitHandler = () => {
-        console.log("email",email,"       defaultEmail    ",defaultAuth.defaultEmail)
-        console.log("password",email)
         if (defaultAuth.defaultEmail === email && defaultAuth.defaultPassword === password) {
-            console.log("1")
+            ToastAndroid.show('Login Successfully!', ToastAndroid.SHORT);
             dispatch(authActions.ToggleIsAuthenticate())
         }
         else {
             setMsg('Invalid Creadentials!')
+            ToastAndroid.show('Login Failed!', ToastAndroid.SHORT);
         }
     }
 
